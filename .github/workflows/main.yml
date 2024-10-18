@@ -1,0 +1,56 @@
+name: Builds Artifact and Release
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  release:
+    types: [published]
+
+env:
+  PROJECT_TYPE: EFI
+
+jobs:
+  build:
+    name: Build
+    runs-on: macos-latest
+    permissions:
+      contents: write
+    env:
+      JOB_TYPE: BUILD
+
+    steps:
+    - uses: actions/checkout@v4.2.0
+      
+    - name: Zip EFI
+      run: |
+        rm -Rf TOOLS
+        rm -Rf "Bios Settings"
+        rm -Rf Screenshot
+        rm -Rf "SysReport"
+        rm -Rf .gitignore
+        rm -Rf NUC8i7HVK.ioreg
+        rm -Rf README.md
+        rm -Rf opencore-2023-09-16-093343.txt
+        rm -Rf ".github"
+        rm -Rf ".git"
+        
+        zip -r NUC8i7HVK.zip .
+        
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4.4.0
+      with:
+        name: NUC8i7HVK
+        path: NUC8i7HVK.zip
+        
+    - name: Upload build
+      uses: svenstaro/upload-release-action@2.9.0
+      if: github.event_name != 'pull_request'
+      with:
+         repo_token: ${{ secrets.GITHUB_TOKEN }}
+         file: ./*.zip
+         tag: ${{ github.ref }}
+         release_name: EFI NUC8i7HVK Hackintosh
+         body: ${{ github.event_name != 'release' && github.event.head_commit.message || '' }}
+         file_glob: true
+         overwrite: true
