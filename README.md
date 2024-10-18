@@ -1,4 +1,4 @@
-:it: [![CI](https://github.com/Baio1977/NUC8i7HVK-Hackintosh/actions/workflows/main.yml/badge.svg)](https://github.com/Baio1977/NUC8i7HVK-Hackintosh/actions/workflows/main.yml)
+[![Builds Artifact and Release](https://github.com/Baio1977/Hackintosh_NUC8i7HN/actions/workflows/main.yml/badge.svg)](https://github.com/Baio1977/Hackintosh_NUC8i7HN/actions/workflows/main.yml)
 
 [![](https://img.shields.io/badge/EFI-Release-informational?style=flat&logo=apple&logoColor=white&color=9debeb)](https://github.com/Baio1977/EFI-Varie-Hackintosh)
 [![](https://img.shields.io/badge/Telegram-HackintoshLifeIT-informational?style=flat&logo=telegram&logoColor=white&color=5fb659)](https://t.me/HackintoshLife_it)
