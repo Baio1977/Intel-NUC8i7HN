@@ -20,7 +20,7 @@ jobs:
       JOB_TYPE: BUILD
 
     steps:
-    - uses: actions/checkout@v4.2.1
+    - uses: actions/checkout@v4.2.2
       
     - name: Zip EFI
       run: |
@@ -49,7 +49,7 @@ jobs:
       with:
          repo_token: ${{ secrets.GITHUB_TOKEN }}
          file: ./*.zip
-         tag: ${{ github.ref }}
+         tag: ${{ github.ref.main }}
          release_name: EFI NUC8i7HVK Hackintosh
          body: ${{ github.event_name != 'release' && github.event.head_commit.message || '' }}
          file_glob: true
