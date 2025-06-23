@@ -268,8 +268,6 @@
                 <dict>
                     <key>AAPL,slot-name</key>
                     <string>Internal</string>
-                    <key>alc-verbs</key>
-                    <data>AQAAAA==</data>
                     <key>device_type</key>
                     <string>Audio device</string>
                     <key>layout-id</key>
@@ -584,7 +582,7 @@
                     <key>ExecutablePath</key>
                     <string>Contents/MacOS/AppleIGB</string>
                     <key>MaxKernel</key>
-                    <string></string>
+                    <string>24.99.99</string>
                     <key>MinKernel</key>
                     <string></string>
                     <key>PlistPath</key>
@@ -935,13 +933,13 @@
                 <key>AdviseFeatures</key>
                 <false/>
                 <key>MLB</key>
-                <string>C02023100GUPHC1CB</string>
+                <string>C02224108J9PHC1AD</string>
                 <key>MaxBIOSVersion</key>
                 <false/>
                 <key>ProcessorType</key>
                 <integer>0</integer>
                 <key>ROM</key>
-                <data>QIOG1Awd</data>
+                <data>hBB5T5NV</data>
                 <key>SpoofVendor</key>
                 <false/>
                 <key>SystemMemoryStatus</key>
@@ -949,9 +947,9 @@
                 <key>SystemProductName</key>
                 <string>iMac20,1</string>
                 <key>SystemSerialNumber</key>
-                <string>C02CT05WPN5T</string>
+                <string>C02HVAYBPN5T</string>
                 <key>SystemUUID</key>
-                <string>EADB18F9-E1B0-4A4F-879C-DFBBF1EFC025</string>
+                <string>3AEAF11A-5631-44ED-9925-2547757D561F</string>
             </dict>
             <key>UpdateDataHub</key>
             <true/>
@@ -1110,6 +1108,18 @@
                     <false/>
                     <key>Path</key>
                     <string>ToggleSipEntry.efi</string>
+                </dict>
+                <dict>
+                    <key>Arguments</key>
+                    <string></string>
+                    <key>Comment</key>
+                    <string></string>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>LoadEarly</key>
+                    <false/>
+                    <key>Path</key>
+                    <string>AudioDxe.efi</string>
                 </dict>
             </array>
             <key>Input</key>
