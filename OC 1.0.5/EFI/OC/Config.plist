@@ -99,56 +99,7 @@
         <key>Booter</key>
         <dict>
             <key>MmioWhitelist</key>
-            <array>
-                <dict>
-                    <key>Address</key>
-                    <integer>3758096384</integer>
-                    <key>Comment</key>
-                    <string>MMIO devirt 0xE0000000 (0x10000 pages)</string>
-                    <key>Enabled</key>
-                    <true/>
-                </dict>
-                <dict>
-                    <key>Address</key>
-                    <integer>4261412864</integer>
-                    <key>Comment</key>
-                    <string>MMIO devirt 0xFE000000 (0x11 pages)</string>
-                    <key>Enabled</key>
-                    <true/>
-                </dict>
-                <dict>
-                    <key>Address</key>
-                    <integer>4273995776</integer>
-                    <key>Comment</key>
-                    <string>MMIO devirt 0xFEC00000 (0x1 page)</string>
-                    <key>Enabled</key>
-                    <true/>
-                </dict>
-                <dict>
-                    <key>Address</key>
-                    <integer>4275044352</integer>
-                    <key>Comment</key>
-                    <string>MMIO devirt 0xFED00000 (0x1 page)</string>
-                    <key>Enabled</key>
-                    <true/>
-                </dict>
-                <dict>
-                    <key>Address</key>
-                    <integer>4276092928</integer>
-                    <key>Comment</key>
-                    <string>MMIO devirt 0xFEE00000 (0x1 page)</string>
-                    <key>Enabled</key>
-                    <true/>
-                </dict>
-                <dict>
-                    <key>Address</key>
-                    <integer>4278190080</integer>
-                    <key>Comment</key>
-                    <string>MMIO devirt 0xFF000000 (0x1000 pages)</string>
-                    <key>Enabled</key>
-                    <true/>
-                </dict>
-            </array>
+            <array/>
             <key>Patch</key>
             <array/>
             <key>Quirks</key>
@@ -160,7 +111,7 @@
                 <key>ClearTaskSwitchBit</key>
                 <false/>
                 <key>DevirtualiseMmio</key>
-                <true/>
+                <false/>
                 <key>DisableSingleUser</key>
                 <false/>
                 <key>DisableVariableWrite</key>
@@ -168,7 +119,7 @@
                 <key>DiscardHibernateMap</key>
                 <false/>
                 <key>EnableSafeModeSlide</key>
-                <true/>
+                <false/>
                 <key>EnableWriteUnprotector</key>
                 <true/>
                 <key>FixupAppleEfiImages</key>
@@ -196,41 +147,13 @@
                 <key>SignalAppleOS</key>
                 <false/>
                 <key>SyncRuntimePermissions</key>
-                <false/>
+                <true/>
             </dict>
         </dict>
         <key>DeviceProperties</key>
         <dict>
             <key>Add</key>
             <dict>
-                <key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)</key>
-                <dict>
-                    <key>AAPL,slot-name</key>
-                    <string>Internal</string>
-                    <key>agdpmod</key>
-                    <string>ignore</string>
-                    <key>device-id</key>
-                    <data>32cAAA==</data>
-                    <key>device_type</key>
-                    <string>VGA compatible controller</string>
-                    <key>model</key>
-                    <string>Radeon RX Vega M GH graphics</string>
-                    <key>no-gfx-spoof</key>
-                    <data>AQAAAA==</data>
-                    <key>revision-id</key>
-                    <data>wgAAAA==</data>
-                </dict>
-                <key>PciRoot(0x0)/Pci(0x1,0x2)/Pci(0x0,0x0)</key>
-                <dict>
-                    <key>AAPL,slot-name</key>
-                    <string>Internal@0,1,2/0,0</string>
-                    <key>compatible</key>
-                    <string>pci14e4,16bc</string>
-                    <key>device_type</key>
-                    <string>SD Host controller</string>
-                    <key>model</key>
-                    <string>SD/MMC Card Reader Controller</string>
-                </dict>
                 <key>PciRoot(0x0)/Pci(0x15,0x1)</key>
                 <dict>
                     <key>AAPL,slot-name</key>
@@ -448,6 +371,24 @@
                     <key>Arch</key>
                     <string>Any</string>
                     <key>BundlePath</key>
+                    <string>DebugEnhancer.kext</string>
+                    <key>Comment</key>
+                    <string>V1.1.1</string>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>ExecutablePath</key>
+                    <string>Contents/MacOS/DebugEnhancer</string>
+                    <key>MaxKernel</key>
+                    <string></string>
+                    <key>MinKernel</key>
+                    <string></string>
+                    <key>PlistPath</key>
+                    <string>Contents/Info.plist</string>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>Any</string>
+                    <key>BundlePath</key>
                     <string>BlueToolFixup.kext</string>
                     <key>Comment</key>
                     <string>V2.7.1</string>
@@ -558,7 +499,7 @@
                     <key>BundlePath</key>
                     <string>RestrictEvents.kext</string>
                     <key>Comment</key>
-                    <string>V1.1.5</string>
+                    <string>V1.1.7</string>
                     <key>Enabled</key>
                     <true/>
                     <key>ExecutablePath</key>
@@ -582,7 +523,7 @@
                     <key>ExecutablePath</key>
                     <string>Contents/MacOS/AppleIGB</string>
                     <key>MaxKernel</key>
-                    <string>24.99.99</string>
+                    <string></string>
                     <key>MinKernel</key>
                     <string></string>
                     <key>PlistPath</key>
@@ -890,9 +831,9 @@
                     <key>bluetoothInternalControllerInfo</key>
                     <data>AAAAAAAAAAAAAAAAAAA=</data>
                     <key>boot-args</key>
-                    <string>-v debug=0x100 keepsyms=1 -radcodec itlwm_cc=IT -btlfxboardid</string>
+                    <string>-v keepsyms=1 debug=0x100 -radcodec shikigva=80 itlwm_cc=IT -btlfxboardid</string>
                     <key>csr-active-config</key>
-                    <data>AAAAAA==</data>
+                    <data>AwgAAA==</data>
                     <key>prev-lang:kbd</key>
                     <string>it-IT:223</string>
                     <key>run-efi-updater</key>
@@ -933,13 +874,13 @@
                 <key>AdviseFeatures</key>
                 <false/>
                 <key>MLB</key>
-                <string>C02224108J9PHC1AD</string>
+                <string>C02139501CDPHC1CB</string>
                 <key>MaxBIOSVersion</key>
                 <false/>
                 <key>ProcessorType</key>
                 <integer>0</integer>
                 <key>ROM</key>
-                <data>hBB5T5NV</data>
+                <data>2/xKSO/T</data>
                 <key>SpoofVendor</key>
                 <false/>
                 <key>SystemMemoryStatus</key>
@@ -947,9 +888,9 @@
                 <key>SystemProductName</key>
                 <string>iMac20,1</string>
                 <key>SystemSerialNumber</key>
-                <string>C02HVAYBPN5T</string>
+                <string>C02GGZZYPN5T</string>
                 <key>SystemUUID</key>
-                <string>3AEAF11A-5631-44ED-9925-2547757D561F</string>
+                <string>E3ECF9BC-DB00-49DE-BAE4-9A42080E1551</string>
             </dict>
             <key>UpdateDataHub</key>
             <true/>
