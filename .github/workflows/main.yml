@@ -43,7 +43,7 @@ jobs:
         name: NUC8i7HVK
         path: NUC8i7HVK.zip
         
-    - name: Upload build
+    - name: Upload files to a GitHub release
       uses: svenstaro/upload-release-action@2.11.2
       if: github.event_name != 'pull_request'
       with:
