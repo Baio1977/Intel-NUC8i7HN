@@ -63,8 +63,9 @@ In Security menu, set the following settings:
 ![Nuc](./Screenshot/5.png)
 
 ## Work EGPU
-![Nuc](./Screenshot/9.png)
-- [Result Tahoe](https://browser.geekbench.com/v6/compute/5545620)
+- [Geekbench RX 6600 XT Tahoe](https://browser.geekbench.com/v6/compute/5545620)
+- [Geekbench RX Vega M GH Tahoe]([https://browser.geekbench.com/v6/compute/5545634)
+- ![Nuc](./Screenshot/9.png)
 
 ## Gui Opencore
 
