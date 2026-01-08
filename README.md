@@ -62,6 +62,10 @@ In Security menu, set the following settings:
 ![Nuc](./Screenshot/4.png)
 ![Nuc](./Screenshot/5.png)
 
+## Work EGPU
+![Nuc](./Screenshot/9.png)
+- [Result Tahoe](https://browser.geekbench.com/v6/compute/5545620)
+
 ## Gui Opencore
 
 ![Nuc](./Screenshot/6.png)
