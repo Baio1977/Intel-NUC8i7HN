@@ -2,7 +2,7 @@ name: Build OpenCore EFI & Release
 
 on:
   push:
-    branches: [ test ]
+    branches: [ main ]
   workflow_dispatch:
     inputs:
       opencore_version:
