@@ -1,56 +1,134 @@
-name: Builds Artifact and Release
+name: Build OpenCore EFI & Release
 
 on:
   push:
-  pull_request:
+    branches: [ test ]
   workflow_dispatch:
-  release:
-    types: [published]
+    inputs:
+      opencore_version:
+        description: "Versione OpenCore (es. 1.0.2) oppure 'latest'"
+        required: false
+        default: "latest"
+
+permissions:
+  contents: write
+
+defaults:
+  run:
+    shell: bash
 
 env:
-  PROJECT_TYPE: EFI
-
+  EFI_DIR: EFI
+  OC_DIR: OC
+  ACPI_FILE: SSDT-NUC8i7HVK.aml
+  DRIVERS_KEEP: >
+    AudioDxe.efi
+    OpenCanopy.efi
+    OpenRuntime.efi
+    ToggleSipEntry.efi
+    ResetNvramEntry.efi
+    HfsPlus.efi
+    TbtForcePower.efi
+   
 jobs:
   build:
-    name: Build
-    runs-on: macos-latest
-    permissions:
-      contents: write
-    env:
-      JOB_TYPE: BUILD
+    runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v6.0.1
-      
-    - name: Zip EFI
-      run: |
-        rm -Rf TOOLS
-        rm -Rf "Bios Settings"
-        rm -Rf Screenshot
-        rm -Rf "SysReport"
-        rm -Rf .gitignore
-        rm -Rf NUC8i7HVK.ioreg
-        rm -Rf README.md
-        rm -Rf opencore-2023-09-16-093343.txt
-        rm -Rf ".github"
-        rm -Rf ".git"
-        
-        zip -r NUC8i7HVK.zip .
-        
-    - name: Upload artifact
-      uses: actions/upload-artifact@v6
-      with:
-        name: NUC8i7HVK
-        path: NUC8i7HVK.zip
-        
-    - name: Upload files to a GitHub release
-      uses: svenstaro/upload-release-action@2.11.3
-      if: github.event_name != 'pull_request'
-      with:
-         repo_token: ${{ secrets.GITHUB_TOKEN }}
-         file: ./*.zip
-         tag: ${{ github.ref }}
-         release_name: EFI NUC8i7HVK Hackintosh
-         body: ${{ github.event_name != 'release' && github.event.head_commit.message || '' }}
-         file_glob: true
-         overwrite: false
+      - name: Checkout repository
+        uses: actions/checkout@v6.0.1
+
+      - name: Install dependencies
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y jq
+
+      - name: Resolve OpenCore release
+        run: |
+          set -euo pipefail
+
+          VERSION="${{ inputs.opencore_version || 'latest' }}"
+
+          if [ "$VERSION" = "latest" ]; then
+            API_URL="https://api.github.com/repos/acidanthera/OpenCorePkg/releases/latest"
+          else
+            API_URL="https://api.github.com/repos/acidanthera/OpenCorePkg/releases/tags/$VERSION"
+          fi
+
+          DOWNLOAD_URL=$(curl -fsSL "$API_URL" \
+            | jq -r '.assets[] | select(.name | test("RELEASE.*zip")) | .browser_download_url')
+
+          if [ -z "$DOWNLOAD_URL" ] || [ "$DOWNLOAD_URL" = "null" ]; then
+            echo "Errore: impossibile trovare l'archivio OpenCore RELEASE"
+            exit 1
+          fi
+
+          echo "DOWNLOAD_URL=$DOWNLOAD_URL" >> "$GITHUB_ENV"
+          echo "OC_VERSION=$VERSION" >> "$GITHUB_ENV"
+
+      - name: Download and extract OpenCore
+        run: |
+          set -euo pipefail
+          curl -L "$DOWNLOAD_URL" -o OpenCore.zip
+          unzip -q OpenCore.zip
+
+          if [ ! -d X64/EFI ]; then
+            echo "Errore: cartella X64/EFI non trovata"
+            exit 1
+          fi
+
+          cp -R X64/EFI .
+
+      - name: Merge custom OC files
+        run: |
+          set -euo pipefail
+
+          mkdir -p $EFI_DIR/OC/{Kexts,Drivers,ACPI}
+
+          cp -R $OC_DIR/Kexts/*        $EFI_DIR/OC/Kexts/
+          cp -R $OC_DIR/Resources     $EFI_DIR/OC/
+          cp    $OC_DIR/Config.plist  $EFI_DIR/OC/
+
+          cp    $OC_DIR/Drivers/HfsPlus.efi \
+                $EFI_DIR/OC/Drivers/
+
+          cp    $OC_DIR/ACPI/$ACPI_FILE \
+                $EFI_DIR/OC/ACPI/
+
+      - name: Cleanup OC tools and drivers
+        run: |
+          set -euo pipefail
+
+          rm -rf $EFI_DIR/OC/Tools/*
+
+          KEEP=($DRIVERS_KEEP)
+          cd $EFI_DIR/OC/Drivers
+
+          for file in *.efi; do
+            [[ " ${KEEP[*]} " =~ " $file " ]] || rm -f "$file"
+          done
+
+      - name: Cleanup workspace
+        run: |
+          rm -rf OpenCore.zip X64 IA32 Docs Utilities
+
+      - name: Create EFI archive
+        run: |
+          zip -r EFI.zip $EFI_DIR
+
+      - name: Upload EFI artifact
+        uses: actions/upload-artifact@v6
+        with:
+          name: NUC8i7HVK-EFI
+          path: EFI.zip
+
+      - name: Create GitHub Release
+        if: github.event_name != 'pull_request'
+        uses: svenstaro/upload-release-action@2.11.3
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: EFI.zip
+          tag: opencore-${{ env.OC_VERSION }}-${{ github.run_number }}
+          release_name: EFI NUC8i7HVK (OpenCore ${{ env.OC_VERSION }})
+          overwrite: true
