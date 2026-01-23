@@ -14,9 +14,32 @@
                     <key>Path</key>
                     <string>SSDT-NUC8i7HVK.aml</string>
                 </dict>
+                <dict>
+                    <key>Comment</key>
+                    <string>SSDT TB3 Coold boot</string>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Path</key>
+                    <string>SSDT-TB3_NUC8i7HVK.aml</string>
+                </dict>
             </array>
             <key>Delete</key>
-            <array/>
+            <array>
+                <dict>
+                    <key>All</key>
+                    <false/>
+                    <key>Comment</key>
+                    <string>Drop SSDT-11 RP05.PXSX.TBDU</string>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>OemTableId</key>
+                    <data></data>
+                    <key>TableLength</key>
+                    <integer>633</integer>
+                    <key>TableSignature</key>
+                    <data>U1NEVA==</data>
+                </dict>
+            </array>
             <key>Patch</key>
             <array>
                 <dict>
@@ -47,7 +70,37 @@
                     <key>TableLength</key>
                     <integer>0</integer>
                     <key>TableSignature</key>
+                    <data>RkFDUA==</data>
+                </dict>
+                <dict>
+                    <key>Base</key>
+                    <string></string>
+                    <key>BaseSkip</key>
+                    <integer>0</integer>
+                    <key>Comment</key>
+                    <string>Rename \_PRW to XPRW</string>
+                    <key>Count</key>
+                    <integer>0</integer>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Find</key>
+                    <data>X1BSVw==</data>
+                    <key>Limit</key>
+                    <integer>0</integer>
+                    <key>Mask</key>
                     <data></data>
+                    <key>OemTableId</key>
+                    <data></data>
+                    <key>Replace</key>
+                    <data>WFBSVw==</data>
+                    <key>ReplaceMask</key>
+                    <data></data>
+                    <key>Skip</key>
+                    <integer>0</integer>
+                    <key>TableLength</key>
+                    <integer>0</integer>
+                    <key>TableSignature</key>
+                    <data>RFNEVA==</data>
                 </dict>
                 <dict>
                     <key>Base</key>
@@ -77,7 +130,7 @@
                     <key>TableLength</key>
                     <integer>0</integer>
                     <key>TableSignature</key>
-                    <data></data>
+                    <data>RFNEVA==</data>
                 </dict>
                 <dict>
                     <key>Base</key>
@@ -85,13 +138,13 @@
                     <key>BaseSkip</key>
                     <integer>0</integer>
                     <key>Comment</key>
-                    <string>Rename \_SB.PCI0.RP05.PXSX.TBDU.XHC to THC for Companion</string>
+                    <string>change RP05._INI to RP05.XINI for ICM disable</string>
                     <key>Count</key>
                     <integer>0</integer>
                     <key>Enabled</key>
                     <true/>
                     <key>Find</key>
-                    <data>F1hIQw==</data>
+                    <data>UlAwNQhMVFJaAAhPQkZaAAhMTVNMAAhMTlNMABQqX0lOSQ==</data>
                     <key>Limit</key>
                     <integer>0</integer>
                     <key>Mask</key>
@@ -99,7 +152,7 @@
                     <key>OemTableId</key>
                     <data></data>
                     <key>Replace</key>
-                    <data>F1RIQw==</data>
+                    <data>UlAwNQhMVFJaAAhPQkZaAAhMTVNMAAhMTlNMABQqWElOSQ==</data>
                     <key>ReplaceMask</key>
                     <data></data>
                     <key>Skip</key>
@@ -141,7 +194,7 @@
                 <key>ClearTaskSwitchBit</key>
                 <false/>
                 <key>DevirtualiseMmio</key>
-                <false/>
+                <true/>
                 <key>DisableSingleUser</key>
                 <false/>
                 <key>DisableVariableWrite</key>
@@ -184,17 +237,6 @@
         <dict>
             <key>Add</key>
             <dict>
-                <key>PciRoot(0x0)/Pci(0x14,0x0)</key>
-                <dict>
-                    <key>AAPL,slot-name</key>
-                    <string>Internal@0,20,0</string>
-                    <key>acpi-wake-type</key>
-                    <data>AQAAAA==</data>
-                    <key>device_type</key>
-                    <string>USB controller</string>
-                    <key>model</key>
-                    <string>100 Series/C230 Series Chipset Family USB 3.0 xHCI Controller</string>
-                </dict>
                 <key>PciRoot(0x0)/Pci(0x15,0x1)</key>
                 <dict>
                     <key>AAPL,slot-name</key>
@@ -241,17 +283,11 @@
                 </dict>
                 <key>PciRoot(0x0)/Pci(0x2,0x0)</key>
                 <dict>
-                    <key>AAPL,GfxYTile</key>
-                    <data>AQAAAA==</data>
                     <key>AAPL,ig-platform-id</key>
                     <data>AwASWQ==</data>
                     <key>AAPL,slot-name</key>
                     <string>Internal</string>
-                    <key>device-id</key>
-                    <data>ElkAAA==</data>
                     <key>enable-metal</key>
-                    <data>AQAAAA==</data>
-                    <key>framebuffer-patch-enable</key>
                     <data>AQAAAA==</data>
                     <key>model</key>
                     <string>Intel HD Graphics 630</string>
@@ -270,7 +306,7 @@
                     <key>BundlePath</key>
                     <string>Lilu.kext</string>
                     <key>Comment</key>
-                    <string>V1.7.1</string>
+                    <string>V1.7.2</string>
                     <key>Enabled</key>
                     <true/>
                     <key>ExecutablePath</key>
@@ -437,6 +473,24 @@
                     <true/>
                     <key>ExecutablePath</key>
                     <string>Contents/MacOS/CtlnaSDXC</string>
+                    <key>MaxKernel</key>
+                    <string></string>
+                    <key>MinKernel</key>
+                    <string></string>
+                    <key>PlistPath</key>
+                    <string>Contents/Info.plist</string>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>Any</string>
+                    <key>BundlePath</key>
+                    <string>DebugEnhancer.kext</string>
+                    <key>Comment</key>
+                    <string>V1.1.1</string>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>ExecutablePath</key>
+                    <string>Contents/MacOS/DebugEnhancer</string>
                     <key>MaxKernel</key>
                     <string></string>
                     <key>MinKernel</key>
@@ -818,7 +872,7 @@
                     <key>bluetoothInternalControllerInfo</key>
                     <data>AAAAAAAAAAAAAAAAAAA=</data>
                     <key>boot-args</key>
-                    <string>-v keepsyms=1 debug=0x100 -radcodec shikigva=80 itlwm_cc=IT -btlfxboardid</string>
+                    <string>-v agdpmod=pikera itlwm_cc=IT</string>
                     <key>csr-active-config</key>
                     <data>AwgAAA==</data>
                     <key>prev-lang:kbd</key>
@@ -975,18 +1029,6 @@
                     <key>LoadEarly</key>
                     <false/>
                     <key>Path</key>
-                    <string>HfsPlus.efi</string>
-                </dict>
-                <dict>
-                    <key>Arguments</key>
-                    <string></string>
-                    <key>Comment</key>
-                    <string></string>
-                    <key>Enabled</key>
-                    <true/>
-                    <key>LoadEarly</key>
-                    <false/>
-                    <key>Path</key>
                     <string>OpenCanopy.efi</string>
                 </dict>
                 <dict>
@@ -1011,7 +1053,7 @@
                     <key>LoadEarly</key>
                     <false/>
                     <key>Path</key>
-                    <string>ResetNvramEntry.efi</string>
+                    <string>HfsPlus.efi</string>
                 </dict>
                 <dict>
                     <key>Arguments</key>
@@ -1023,7 +1065,7 @@
                     <key>LoadEarly</key>
                     <false/>
                     <key>Path</key>
-                    <string>TbtForcePower.efi</string>
+                    <string>ResetNvramEntry.efi</string>
                 </dict>
                 <dict>
                     <key>Arguments</key>
