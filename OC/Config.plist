@@ -16,11 +16,11 @@
                 </dict>
                 <dict>
                     <key>Comment</key>
-                    <string>SSDT TB3 Coold boot</string>
+                    <string>SSDT RP05 Debug</string>
                     <key>Enabled</key>
                     <true/>
                     <key>Path</key>
-                    <string>SSDT-TB3_NUC8i7HVK.aml</string>
+                    <string>SSDT-TB3Legacy.aml</string>
                 </dict>
             </array>
             <key>Delete</key>
@@ -138,7 +138,7 @@
                     <key>BaseSkip</key>
                     <integer>0</integer>
                     <key>Comment</key>
-                    <string>change RP05._INI to RP05.XINI for ICM disable</string>
+                    <string>Rename \_SB.PCI0.RP05._INI to XINI for ICM disable</string>
                     <key>Count</key>
                     <integer>0</integer>
                     <key>Enabled</key>
@@ -160,7 +160,7 @@
                     <key>TableLength</key>
                     <integer>0</integer>
                     <key>TableSignature</key>
-                    <data></data>
+                    <data>RFNEVA==</data>
                 </dict>
             </array>
             <key>Quirks</key>
@@ -194,7 +194,7 @@
                 <key>ClearTaskSwitchBit</key>
                 <false/>
                 <key>DevirtualiseMmio</key>
-                <true/>
+                <false/>
                 <key>DisableSingleUser</key>
                 <false/>
                 <key>DisableVariableWrite</key>
@@ -259,6 +259,61 @@
                     <key>model</key>
                     <string>100 Series/C230 Series Chipset Family Serial IO I2C Controller #2</string>
                 </dict>
+                <key>PciRoot(0x0)/Pci(0x1C,0x1)</key>
+                <dict>
+                    <key>AAPL,slot-name</key>
+                    <string>Internal@0,28,1</string>
+                    <key>device_type</key>
+                    <string>PCI bridge</string>
+                    <key>model</key>
+                    <string>100 Series/C230 Series Chipset Family PCI Express Root Port #2</string>
+                    <key>reg-ltrovr</key>
+                    <data>AAQAAAAAAAA=</data>
+                </dict>
+                <key>PciRoot(0x0)/Pci(0x1C,0x2)</key>
+                <dict>
+                    <key>AAPL,slot-name</key>
+                    <string>Internal@0,28,2</string>
+                    <key>device_type</key>
+                    <string>PCI bridge</string>
+                    <key>model</key>
+                    <string>100 Series/C230 Series Chipset Family PCI Express Root Port #3</string>
+                    <key>reg-ltrovr</key>
+                    <data>AAQAAAAAAAA=</data>
+                </dict>
+                <key>PciRoot(0x0)/Pci(0x1C,0x4)</key>
+                <dict>
+                    <key>AAPL,slot-name</key>
+                    <string>Internal@0,28,4</string>
+                    <key>device_type</key>
+                    <string>PCI bridge</string>
+                    <key>model</key>
+                    <string>100 Series/C230 Series Chipset Family PCI Express Root Port #5</string>
+                    <key>reg-ltrovr</key>
+                    <data>AAQAAAAAAAA=</data>
+                </dict>
+                <key>PciRoot(0x0)/Pci(0x1D,0x0)</key>
+                <dict>
+                    <key>AAPL,slot-name</key>
+                    <string>Internal@0,29,0</string>
+                    <key>device_type</key>
+                    <string>PCI bridge</string>
+                    <key>model</key>
+                    <string>100 Series/C230 Series Chipset Family PCI Express Root Port #9</string>
+                    <key>reg-ltrovr</key>
+                    <data>AAQAAAAAAAA=</data>
+                </dict>
+                <key>PciRoot(0x0)/Pci(0x1D,0x4)</key>
+                <dict>
+                    <key>AAPL,slot-name</key>
+                    <string>Internal@0,29,4</string>
+                    <key>device_type</key>
+                    <string>PCI bridge</string>
+                    <key>model</key>
+                    <string>100 Series/C230 Series Chipset Family PCI Express Root Port #13</string>
+                    <key>reg-ltrovr</key>
+                    <data>AAQAAAAAAAA=</data>
+                </dict>
                 <key>PciRoot(0x0)/Pci(0x1F,0x0)</key>
                 <dict>
                     <key>AAPL,slot-name</key>
@@ -287,6 +342,8 @@
                     <data>AwASWQ==</data>
                     <key>AAPL,slot-name</key>
                     <string>Internal</string>
+                    <key>device-id</key>
+                    <data>ElkAAA==</data>
                     <key>enable-metal</key>
                     <data>AQAAAA==</data>
                     <key>model</key>
@@ -520,6 +577,24 @@
                     <key>Arch</key>
                     <string>Any</string>
                     <key>BundlePath</key>
+                    <string>HibernationFixup.kext</string>
+                    <key>Comment</key>
+                    <string>V1.5.4</string>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>ExecutablePath</key>
+                    <string>Contents/MacOS/HibernationFixup</string>
+                    <key>MaxKernel</key>
+                    <string></string>
+                    <key>MinKernel</key>
+                    <string></string>
+                    <key>PlistPath</key>
+                    <string>Contents/Info.plist</string>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>Any</string>
+                    <key>BundlePath</key>
                     <string>IntelMausi.kext</string>
                     <key>Comment</key>
                     <string>V1.0.8</string>
@@ -635,6 +710,24 @@
                     <true/>
                     <key>ExecutablePath</key>
                     <string></string>
+                    <key>MaxKernel</key>
+                    <string></string>
+                    <key>MinKernel</key>
+                    <string></string>
+                    <key>PlistPath</key>
+                    <string>Contents/Info.plist</string>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>Any</string>
+                    <key>BundlePath</key>
+                    <string>USBWakeFixup.kext</string>
+                    <key>Comment</key>
+                    <string>V1</string>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>ExecutablePath</key>
+                    <string>Contents/MacOS/USBWakeFixup</string>
                     <key>MaxKernel</key>
                     <string></string>
                     <key>MinKernel</key>
@@ -872,7 +965,7 @@
                     <key>bluetoothInternalControllerInfo</key>
                     <data>AAAAAAAAAAAAAAAAAAA=</data>
                     <key>boot-args</key>
-                    <string>-v agdpmod=pikera itlwm_cc=IT</string>
+                    <string>-v itlwm_cc=IT agdpmod=pikera</string>
                     <key>csr-active-config</key>
                     <data>AwgAAA==</data>
                     <key>prev-lang:kbd</key>
