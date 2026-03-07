@@ -5,10 +5,14 @@
 
 # Intel@ NUC8i7HVK-Hackintosh
 
-![Lenovo](./Screenshot/1.jpg)
+![Nuc](./Screenshot/1.jpg)
 
-![Lenovo](./Screenshot/2.jpg)
- 
+![Nuc](./Screenshot/2.jpg)
+
+## Tahoe ONLY:
+
+Use this script to restore audio functions https://github.com/Mirone/MyKextInstaller
+
 ## Specification:
 
 - CPU: Intel® Core™ i7-8809G (Kaby Lake-r)
