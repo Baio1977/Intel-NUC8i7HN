@@ -70,6 +70,8 @@ In Security menu, set the following settings:
 - [Geekbench RX 6600 XT Tahoe](https://browser.geekbench.com/v6/compute/5545620)
 - [Geekbench RX Vega M GH Tahoe](https://browser.geekbench.com/v6/compute/5545634)
 - ![Nuc](./Screenshot/9.png)
+- Important : Open config.plist and edit it like this (Hot-plug like this doesn't work)
+- ![Nuc](./Screenshot/10.png)
 
 ## Gui Opencore
 
