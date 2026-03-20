@@ -8,7 +8,15 @@
             <array>
                 <dict>
                     <key>Comment</key>
-                    <string></string>
+                    <string>DSDT Debug All</string>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Path</key>
+                    <string>DSDT.aml</string>
+                </dict>
+                <dict>
+                    <key>Comment</key>
+                    <string>SSDT Full Hack</string>
                     <key>Enabled</key>
                     <true/>
                     <key>Path</key>
@@ -16,30 +24,15 @@
                 </dict>
                 <dict>
                     <key>Comment</key>
-                    <string></string>
+                    <string>SSDT USB Patch</string>
                     <key>Enabled</key>
                     <true/>
                     <key>Path</key>
-                    <string>SSDT-RP05_TB3DBG.aml</string>
+                    <string>SSDT-RP05_USB_Companion.aml</string>
                 </dict>
             </array>
             <key>Delete</key>
-            <array>
-                <dict>
-                    <key>All</key>
-                    <false/>
-                    <key>Comment</key>
-                    <string>Drop SSDT-11 RP05.PXSX.TBDU</string>
-                    <key>Enabled</key>
-                    <true/>
-                    <key>OemTableId</key>
-                    <data></data>
-                    <key>TableLength</key>
-                    <integer>633</integer>
-                    <key>TableSignature</key>
-                    <data>U1NEVA==</data>
-                </dict>
-            </array>
+            <array/>
             <key>Patch</key>
             <array>
                 <dict>
@@ -78,66 +71,6 @@
                     <key>BaseSkip</key>
                     <integer>0</integer>
                     <key>Comment</key>
-                    <string>Rename \_GPE. NTFY to NTFO</string>
-                    <key>Count</key>
-                    <integer>0</integer>
-                    <key>Enabled</key>
-                    <true/>
-                    <key>Find</key>
-                    <data>UE5URlk=</data>
-                    <key>Limit</key>
-                    <integer>0</integer>
-                    <key>Mask</key>
-                    <data></data>
-                    <key>OemTableId</key>
-                    <data></data>
-                    <key>Replace</key>
-                    <data>UE5URk8=</data>
-                    <key>ReplaceMask</key>
-                    <data></data>
-                    <key>Skip</key>
-                    <integer>0</integer>
-                    <key>TableLength</key>
-                    <integer>0</integer>
-                    <key>TableSignature</key>
-                    <data>RFNEVA==</data>
-                </dict>
-                <dict>
-                    <key>Base</key>
-                    <string></string>
-                    <key>BaseSkip</key>
-                    <integer>0</integer>
-                    <key>Comment</key>
-                    <string>Rename \_SB.SGOV to XGOV</string>
-                    <key>Count</key>
-                    <integer>0</integer>
-                    <key>Enabled</key>
-                    <true/>
-                    <key>Find</key>
-                    <data>BFNHT1Y=</data>
-                    <key>Limit</key>
-                    <integer>0</integer>
-                    <key>Mask</key>
-                    <data></data>
-                    <key>OemTableId</key>
-                    <data></data>
-                    <key>Replace</key>
-                    <data>BFhHT1Y=</data>
-                    <key>ReplaceMask</key>
-                    <data></data>
-                    <key>Skip</key>
-                    <integer>0</integer>
-                    <key>TableLength</key>
-                    <integer>0</integer>
-                    <key>TableSignature</key>
-                    <data>RFNEVA==</data>
-                </dict>
-                <dict>
-                    <key>Base</key>
-                    <string></string>
-                    <key>BaseSkip</key>
-                    <integer>0</integer>
-                    <key>Comment</key>
                     <string>Rename \_SB.PCI0.LPCB.H_EC _STA to XSTA</string>
                     <key>Count</key>
                     <integer>0</integer>
@@ -168,13 +101,13 @@
                     <key>BaseSkip</key>
                     <integer>0</integer>
                     <key>Comment</key>
-                    <string>Rename \_SB.PCI0.RP05._INI to XINI for ICM disable</string>
+                    <string>Rename  \_SB.PCI0.RP05.PXSX.TBDU.XHC to THC</string>
                     <key>Count</key>
                     <integer>0</integer>
                     <key>Enabled</key>
                     <true/>
                     <key>Find</key>
-                    <data>UlAwNQhMVFJaAAhPQkZaAAhMTVNMAAhMTlNMABQqX0lOSQ==</data>
+                    <data>F1hIQw==</data>
                     <key>Limit</key>
                     <integer>0</integer>
                     <key>Mask</key>
@@ -182,7 +115,7 @@
                     <key>OemTableId</key>
                     <data></data>
                     <key>Replace</key>
-                    <data>UlAwNQhMVFJaAAhPQkZaAAhMTVNMAAhMTlNMABQqWElOSQ==</data>
+                    <data>F1RIQw==</data>
                     <key>ReplaceMask</key>
                     <data></data>
                     <key>Skip</key>
@@ -190,7 +123,7 @@
                     <key>TableLength</key>
                     <integer>0</integer>
                     <key>TableSignature</key>
-                    <data>RFNEVA==</data>
+                    <data>U1NEVA==</data>
                 </dict>
             </array>
             <key>Quirks</key>
@@ -200,7 +133,7 @@
                 <key>NormalizeHeaders</key>
                 <false/>
                 <key>RebaseRegions</key>
-                <false/>
+                <true/>
                 <key>ResetHwSig</key>
                 <false/>
                 <key>ResetLogoStatus</key>
@@ -267,18 +200,58 @@
         <dict>
             <key>Add</key>
             <dict>
-                <key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)</key>
+                <key>#PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)</key>
+                <dict>
+                    <key>PCI-Thunderbolt</key>
+                    <integer>1</integer>
+                </dict>
+                <key>#PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)/Pci(0x0,0x0)</key>
+                <dict>
+                    <key>PCIHotplugCapable</key>
+                    <integer>0</integer>
+                </dict>
+                <key>#PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)</key>
+                <dict>
+                    <key>#TBTDPLowToHigh</key>
+                    <data>AQAAAA==</data>
+                    <key>#TBTFlags</key>
+                    <data>AwAAAA==</data>
+                    <key>#ThunderboltConfig</key>
+                    <data>AAIcAAIABQMBAAQABQMCAAMABQMBAAAAAwMCAAEAAgA=</data>
+                    <key>#ThunderboltDROM</key>
+                    <data>ZQAdfNK9CC32pjNiwAFsAIaAiCABKgiBgAKAAAAACIKQAYAAAAAIg4AEgAEAAAiEkAOAAQAABYVQAAAFhlAAAAKHC4ggAQBkAAAAAAADiYAFilAAAAWLUAAACAFJbnRlbAAXAkFscGluZSBSaWRnZSBKSEw2NTQwAA==</data>
+                    <key>#ThunderboltUUID</key>
+                    <data>AAADzHAAGGcj9Dg/wqQhAQ==</data>
+                    <key>#linkDetails</key>
+                    <data>CAAAAAMAAAA=</data>
+                    <key>#pathcr</key>
+                    <data>BAAAAAAAAAAAAAcAEAAQAAUAAAAAAAAAAAAHABAAEAABAAAACwAOAA4AAAAAAAAAAgAAAAAAAAAAAAQAAgABAAMAAAAAAAAAAAAHAAIAAQA=</data>
+                    <key>#sscOffset</key>
+                    <data>AAc=</data>
+                    <key>power-save</key>
+                    <integer>1</integer>
+                </dict>
+                <key>#PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)/Pci(0x1,0x0)</key>
                 <dict>
                     <key>AAPL,slot-name</key>
-                    <string>Internal@0,1,0/0,0</string>
+                    <string>Slot- 1</string>
+                </dict>
+                <key>#PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)/Pci(0x2,0x0)</key>
+                <dict>
+                    <key>PCIHotplugCapable</key>
+                    <integer>0</integer>
+                </dict>
+                <key>#PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)/Pci(0x4,0x0)</key>
+                <dict>
+                    <key>AAPL,slot-name</key>
+                    <string>Slot- 2</string>
+                </dict>
+                <key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)</key>
+                <dict>
                     <key>agdpmod</key>
                     <string>ignore</string>
                     <key>device-id</key>
                     <data>32cAAA==</data>
-                    <key>device_type</key>
-                    <string>VGA compatible controller</string>
-                    <key>hda-gfx</key>
-                    <string>onboard-2</string>
                     <key>model</key>
                     <string>AMD Radeon RX Vega M GH</string>
                     <key>no-gfx-spoof</key>
@@ -288,181 +261,54 @@
                 </dict>
                 <key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x1)</key>
                 <dict>
-                    <key>AAPL,slot-name</key>
-                    <string>Internal@0,1,0/0,1</string>
-                    <key>device_type</key>
-                    <string>Audio device</string>
-                    <key>hda-gfx</key>
-                    <string>onboard-2</string>
                     <key>model</key>
                     <string>AMD Radeon RX Vega HDMI Audio</string>
                 </dict>
-                <key>PciRoot(0x0)/Pci(0x1,0x1)/Pci(0x0,0x0)</key>
-                <dict>
-                    <key>AAPL,slot-name</key>
-                    <string>Internal@0,1,1/0,0</string>
-                    <key>device_type</key>
-                    <string>USB controller</string>
-                    <key>model</key>
-                    <string>ASM2142/ASM3142 USB 3.1 Host Controller</string>
-                </dict>
                 <key>PciRoot(0x0)/Pci(0x1,0x2)/Pci(0x0,0x0)</key>
                 <dict>
-                    <key>AAPL,slot-name</key>
-                    <string>Internal@0,1,2/0,0</string>
                     <key>compatible</key>
                     <string>pci14e4,16bc</string>
-                    <key>device_type</key>
-                    <string>SD Host controller</string>
-                    <key>model</key>
-                    <string>OZ711 SD/MMC Card Reader Controller</string>
                 </dict>
                 <key>PciRoot(0x0)/Pci(0x15,0x1)</key>
                 <dict>
-                    <key>AAPL,slot-name</key>
-                    <string>Internal@0,21,1</string>
-                    <key>device_type</key>
-                    <string>Signal processing controller</string>
                     <key>i2c-channel-number</key>
                     <integer>1</integer>
-                    <key>model</key>
-                    <string>100 Series/C230 Series Chipset Family Serial IO I2C Controller #1</string>
                 </dict>
                 <key>PciRoot(0x0)/Pci(0x15,0x2)</key>
                 <dict>
-                    <key>AAPL,slot-name</key>
-                    <string>Internal@0,21,2</string>
-                    <key>device_type</key>
-                    <string>Signal processing controller</string>
                     <key>i2c-channel-number</key>
                     <integer>2</integer>
-                    <key>model</key>
-                    <string>100 Series/C230 Series Chipset Family Serial IO I2C Controller #2</string>
                 </dict>
                 <key>PciRoot(0x0)/Pci(0x1C,0x4)</key>
                 <dict>
-                    <key>AAPL,slot-name</key>
-                    <string>Internal@0,28,4</string>
-                    <key>device_type</key>
-                    <string>PCI bridge</string>
-                    <key>model</key>
-                    <string>100 Series/C230 Series Chipset Family PCI Express Root Port #5</string>
                     <key>reg-ltrovr</key>
                     <data>AAQAAAAAAAA=</data>
                 </dict>
-                <key>PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)</key>
-                <dict>
-                    <key>AAPL,slot-name</key>
-                    <string>Internal@0,28,4/0,0</string>
-                    <key>device_type</key>
-                    <string>PCI bridge</string>
-                    <key>model</key>
-                    <string>JHL6540 Thunderbolt 3 PXSX Bridge</string>
-                </dict>
-                <key>PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)/Pci(0x0,0x0)</key>
-                <dict>
-                    <key>AAPL,slot-name</key>
-                    <string>Internal@0,28,4/0,0/0,0</string>
-                    <key>device_type</key>
-                    <string>PCI bridge</string>
-                    <key>model</key>
-                    <string>JHL6540 Thunderbolt 3 DSB0 Bridge</string>
-                </dict>
-                <key>PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)</key>
-                <dict>
-                    <key>AAPL,slot-name</key>
-                    <string>Internal@0,28,4/0,0/0,0/0,0</string>
-                    <key>TBTDPLowToHigh</key>
-                    <data>AQAAAA==</data>
-                    <key>TBTFlags</key>
-                    <data>AwAAAA==</data>
-                    <key>ThunderboltConfig</key>
-                    <data>AAIcAAIABQMBAAQABQMCAAMABQMBAAAAAwMCAAEAAgA=</data>
-                    <key>ThunderboltDROM</key>
-                    <data>ZQAdfNK9CC32pjNiwAFsAIaAiCABKgiBgAKAAAAACIKQAYAAAAAIg4AEgAEAAAiEkAOAAQAABYVQAAAFhlAAAAKHC4ggAQBkAAAAAAADiYAFilAAAAWLUAAACAFJbnRlbAAXAkFscGluZSBSaWRnZSBKSEw2NTQwAA==</data>
-                    <key>ThunderboltUUID</key>
-                    <data>AAADzHAAGGcj9Dg/wqQhAQ==</data>
-                    <key>device_type</key>
-                    <string>System peripheral</string>
-                    <key>linkDetails</key>
-                    <data>CAAAAAMAAAA=</data>
-                    <key>model</key>
-                    <string>JHL6540 Thunderbolt 3 NHI0 Controller</string>
-                    <key>pathcr</key>
-                    <data>BAAAAAAAAAAAAAcAEAAQAAUAAAAAAAAAAAAHABAAEAABAAAACwAOAA4AAAAAAAAAAgAAAAAAAAAAAAQAAgABAAMAAAAAAAAAAAAHAAIAAQA=</data>
-                    <key>sscOffset</key>
-                    <data>AAc=</data>
-                </dict>
-                <key>PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)/Pci(0x1,0x0)</key>
-                <dict>
-                    <key>AAPL,slot-name</key>
-                    <string>Internal@0,28,4/0,0/1,0</string>
-                    <key>device_type</key>
-                    <string>PCI bridge</string>
-                    <key>model</key>
-                    <string>JHL6540 Thunderbolt 3 DSB1 Bridge</string>
-                </dict>
-                <key>PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)/Pci(0x2,0x0)</key>
-                <dict>
-                    <key>AAPL,slot-name</key>
-                    <string>Internal@0,28,4/0,0/2,0</string>
-                    <key>device_type</key>
-                    <string>PCI bridge</string>
-                    <key>model</key>
-                    <string>JHL6540 Thunderbolt 3 DSB2 Bridge</string>
-                </dict>
                 <key>PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)/Pci(0x2,0x0)/Pci(0x0,0x0)</key>
                 <dict>
-                    <key>AAPL,slot-name</key>
-                    <string>Internal@0,28,4/0,0/2,0/0,0</string>
-                    <key>device_type</key>
-                    <string>PCI bridge</string>
-                    <key>model</key>
-                    <string>JHL6540 Thunderbolt 3 XHC2 Bridge</string>
-                </dict>
-                <key>PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)/Pci(0x4,0x0)</key>
-                <dict>
-                    <key>AAPL,slot-name</key>
-                    <string>Internal@0,28,4/0,0/4,0</string>
-                    <key>device_type</key>
-                    <string>PCI bridge</string>
-                    <key>model</key>
-                    <string>JHL6540 Thunderbolt 3 DSB4 Bridge</string>
+                    <key>USBBusNumber</key>
+                    <integer>0</integer>
+                    <key>UsbCompanionControllerPresent</key>
+                    <integer>1</integer>
                 </dict>
                 <key>PciRoot(0x0)/Pci(0x1F,0x0)</key>
                 <dict>
-                    <key>AAPL,slot-name</key>
-                    <string>Internal@0,31,0</string>
-                    <key>device_type</key>
-                    <string>ISA bridge</string>
                     <key>ec-device</key>
                     <string>Intel_EC_V5</string>
-                    <key>model</key>
-                    <string>HM175 Chipset LPC/eSPI Controller</string>
                 </dict>
                 <key>PciRoot(0x0)/Pci(0x1F,0x3)</key>
                 <dict>
-                    <key>AAPL,slot-name</key>
-                    <string>Internal</string>
-                    <key>device_type</key>
-                    <string>Audio device</string>
                     <key>layout-id</key>
                     <integer>22</integer>
-                    <key>model</key>
-                    <string>CM238 HD Audio Controller</string>
                 </dict>
                 <key>PciRoot(0x0)/Pci(0x2,0x0)</key>
                 <dict>
                     <key>AAPL,ig-platform-id</key>
                     <data>AwASWQ==</data>
-                    <key>AAPL,slot-name</key>
-                    <string>Internal</string>
                     <key>device-id</key>
                     <data>ElkAAA==</data>
                     <key>enable-metal</key>
                     <data>AQAAAA==</data>
-                    <key>model</key>
-                    <string>Intel HD Graphics 630</string>
                 </dict>
             </dict>
             <key>Delete</key>
