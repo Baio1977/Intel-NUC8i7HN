@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       opencore_version:
-        description: "Versione OpenCore (es. 1.0.2) oppure 'latest'"
+        description: "latest"
         required: false
         default: "latest"
 
@@ -28,7 +28,6 @@ env:
     ToggleSipEntry.efi
     ResetNvramEntry.efi
     HfsPlus.efi
-    TbtForcePower.efi
    
 jobs:
   build:
@@ -36,7 +35,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6.0.1
+        uses: actions/checkout@v6.0.2
 
       - name: Install dependencies
         run: |
@@ -118,14 +117,14 @@ jobs:
           zip -r EFI.zip $EFI_DIR
 
       - name: Upload EFI artifact
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: NUC8i7HVK-EFI
           path: EFI.zip
 
       - name: Create GitHub Release
         if: github.event_name != 'pull_request'
-        uses: svenstaro/upload-release-action@2.11.3
+        uses: svenstaro/upload-release-action@2.11.5
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: EFI.zip
