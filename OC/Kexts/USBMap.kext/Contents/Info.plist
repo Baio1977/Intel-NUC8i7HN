@@ -267,6 +267,57 @@
 			<key>model</key>
 			<string>iMac20,1</string>
 		</dict>
+		<key>iMac20,1-THC</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.apple.driver.AppleUSBHostMergeProperties</string>
+			<key>IOClass</key>
+			<string>AppleUSBHostMergeProperties</string>
+			<key>IOParentMatch</key>
+			<dict>
+				<key>IOPropertyMatch</key>
+				<dict>
+					<key>pcidebug</key>
+					<string>165:0:0</string>
+				</dict>
+			</dict>
+			<key>IOProviderClass</key>
+			<string>AppleUSBXHCIAR</string>
+			<key>IOProviderMergeProperties</key>
+			<dict>
+				<key>kUSBMuxEnabled</key>
+				<true/>
+				<key>port-count</key>
+				<data>BAAAAA==</data>
+				<key>ports</key>
+				<dict>
+					<key>SS01</key>
+					<dict>
+						<key>UsbConnector</key>
+						<integer>10</integer>
+						<key>port</key>
+						<data>AwAAAA==</data>
+						<key>usb-port-type</key>
+						<integer>10</integer>
+						<key>usb-port-number</key>
+						<data>AwAAAA==</data>
+					</dict>
+					<key>SS02</key>
+					<dict>
+						<key>UsbConnector</key>
+						<integer>10</integer>
+						<key>port</key>
+						<data>BAAAAA==</data>
+						<key>usb-port-type</key>
+						<integer>10</integer>
+						<key>usb-port-number</key>
+						<data>BAAAAA==</data>
+					</dict>
+				</dict>
+			</dict>
+			<key>model</key>
+			<string>iMac20,1</string>
+		</dict>
 	</dict>
 	<key>OSBundleRequired</key>
 	<string>Root</string>
