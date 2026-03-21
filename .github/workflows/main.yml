@@ -21,6 +21,7 @@ env:
   EFI_DIR: EFI
   OC_DIR: OC
   ACPI_FILE: SSDT-NUC8i7HVK.aml
+  ACPI_TB3_FILE: SSDT-RP05_TB3.aml
   DRIVERS_KEEP: >
     AudioDxe.efi
     OpenCanopy.efi
