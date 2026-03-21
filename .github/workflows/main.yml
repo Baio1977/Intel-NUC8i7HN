@@ -96,6 +96,9 @@ jobs:
           cp    $OC_DIR/ACPI/$ACPI_FILE \
                 $EFI_DIR/OC/ACPI/
 
+          cp    $OC_DIR/ACPI/$ACPI_TB3_FILE \
+                $EFI_DIR/OC/ACPI/
+
       - name: Cleanup OC tools and drivers
         run: |
           set -euo pipefail
