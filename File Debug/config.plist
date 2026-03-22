@@ -71,36 +71,6 @@
                     <key>BaseSkip</key>
                     <integer>0</integer>
                     <key>Comment</key>
-                    <string>Rename \_SB.PCI0.LPCB.H_EC _STA to XSTA</string>
-                    <key>Count</key>
-                    <integer>0</integer>
-                    <key>Enabled</key>
-                    <true/>
-                    <key>Find</key>
-                    <data>UhQaX1NUQQ==</data>
-                    <key>Limit</key>
-                    <integer>0</integer>
-                    <key>Mask</key>
-                    <data></data>
-                    <key>OemTableId</key>
-                    <data></data>
-                    <key>Replace</key>
-                    <data>UhQaWFNUQQ==</data>
-                    <key>ReplaceMask</key>
-                    <data></data>
-                    <key>Skip</key>
-                    <integer>0</integer>
-                    <key>TableLength</key>
-                    <integer>0</integer>
-                    <key>TableSignature</key>
-                    <data>RFNEVA==</data>
-                </dict>
-                <dict>
-                    <key>Base</key>
-                    <string></string>
-                    <key>BaseSkip</key>
-                    <integer>0</integer>
-                    <key>Comment</key>
                     <string>Rename  \_SB.PCI0.RP05.PXSX.TBDU.XHC to THC</string>
                     <key>Count</key>
                     <integer>0</integer>
@@ -200,6 +170,11 @@
         <dict>
             <key>Add</key>
             <dict>
+                <key>#PciRoot(0x0)/Pci(0x1C,0x4)</key>
+                <dict>
+                    <key>reg-ltrovr</key>
+                    <data>AAQAAAAAAAA=</data>
+                </dict>
                 <key>#PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)</key>
                 <dict>
                     <key>PCI-Thunderbolt</key>
@@ -278,11 +253,6 @@
                 <dict>
                     <key>i2c-channel-number</key>
                     <integer>2</integer>
-                </dict>
-                <key>PciRoot(0x0)/Pci(0x1C,0x4)</key>
-                <dict>
-                    <key>reg-ltrovr</key>
-                    <data>AAQAAAAAAAA=</data>
                 </dict>
                 <key>PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)/Pci(0x2,0x0)/Pci(0x0,0x0)</key>
                 <dict>
@@ -432,7 +402,7 @@
                     <key>BundlePath</key>
                     <string>Polaris22Fixup.kext</string>
                     <key>Comment</key>
-                    <string>V1.4.1</string>
+                    <string>V1.4.0</string>
                     <key>Enabled</key>
                     <true/>
                     <key>ExecutablePath</key>
@@ -450,7 +420,7 @@
                     <key>BundlePath</key>
                     <string>AppleALC.kext</string>
                     <key>Comment</key>
-                    <string>V1.9.6</string>
+                    <string>V1.9.7</string>
                     <key>Enabled</key>
                     <true/>
                     <key>ExecutablePath</key>
@@ -468,7 +438,7 @@
                     <key>BundlePath</key>
                     <string>BlueToolFixup.kext</string>
                     <key>Comment</key>
-                    <string>V2.7.1</string>
+                    <string>V2.7.2</string>
                     <key>Enabled</key>
                     <true/>
                     <key>ExecutablePath</key>
@@ -969,13 +939,13 @@
                 <key>AdviseFeatures</key>
                 <false/>
                 <key>MLB</key>
-                <string>C02016200GUPHC1A8</string>
+                <string>C02101501QXPHC11H</string>
                 <key>MaxBIOSVersion</key>
                 <false/>
                 <key>ProcessorType</key>
                 <integer>0</integer>
                 <key>ROM</key>
-                <data>GHCdUJ2Q</data>
+                <data>5ESJ+jsP</data>
                 <key>SpoofVendor</key>
                 <false/>
                 <key>SystemMemoryStatus</key>
@@ -983,9 +953,9 @@
                 <key>SystemProductName</key>
                 <string>iMac20,1</string>
                 <key>SystemSerialNumber</key>
-                <string>C02CLDZDPN5T</string>
+                <string>C02F2SYZPN5T</string>
                 <key>SystemUUID</key>
-                <string>A25D568A-7C52-4E4E-A37E-8F351757B26A</string>
+                <string>C67A1B96-2BBC-4DC4-879F-13D22630D514</string>
             </dict>
             <key>UpdateDataHub</key>
             <true/>
