@@ -175,11 +175,6 @@
                     <key>reg-ltrovr</key>
                     <data>AAQAAAAAAAA=</data>
                 </dict>
-                <key>#PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)</key>
-                <dict>
-                    <key>PCI-Thunderbolt</key>
-                    <integer>1</integer>
-                </dict>
                 <key>#PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)/Pci(0x0,0x0)</key>
                 <dict>
                     <key>PCIHotplugCapable</key>
@@ -206,20 +201,10 @@
                     <key>power-save</key>
                     <integer>1</integer>
                 </dict>
-                <key>#PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)/Pci(0x1,0x0)</key>
-                <dict>
-                    <key>AAPL,slot-name</key>
-                    <string>Slot- 1</string>
-                </dict>
                 <key>#PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)/Pci(0x2,0x0)</key>
                 <dict>
                     <key>PCIHotplugCapable</key>
                     <integer>0</integer>
-                </dict>
-                <key>#PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)/Pci(0x4,0x0)</key>
-                <dict>
-                    <key>AAPL,slot-name</key>
-                    <string>Slot- 2</string>
                 </dict>
                 <key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)</key>
                 <dict>
@@ -254,12 +239,33 @@
                     <key>i2c-channel-number</key>
                     <integer>2</integer>
                 </dict>
+                <key>PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)</key>
+                <dict>
+                    <key>#PCI-Thunderbolt</key>
+                    <integer>1</integer>
+                    <key>AAPL,slot-name</key>
+                    <string>Thunderbolt</string>
+                    <key>built-in</key>
+                    <data>AA==</data>
+                    <key>model</key>
+                    <string>Thunderbolt Controller</string>
+                </dict>
+                <key>PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)/Pci(0x1,0x0)</key>
+                <dict>
+                    <key>AAPL,slot-name</key>
+                    <string>Slot- 1</string>
+                </dict>
                 <key>PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)/Pci(0x2,0x0)/Pci(0x0,0x0)</key>
                 <dict>
                     <key>USBBusNumber</key>
                     <integer>0</integer>
                     <key>UsbCompanionControllerPresent</key>
                     <integer>1</integer>
+                </dict>
+                <key>PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)/Pci(0x4,0x0)</key>
+                <dict>
+                    <key>AAPL,slot-name</key>
+                    <string>Slot- 2</string>
                 </dict>
                 <key>PciRoot(0x0)/Pci(0x1F,0x0)</key>
                 <dict>
@@ -939,13 +945,13 @@
                 <key>AdviseFeatures</key>
                 <false/>
                 <key>MLB</key>
-                <string>C02101501QXPHC11H</string>
+                <string>C02015207J9PHC1CB</string>
                 <key>MaxBIOSVersion</key>
                 <false/>
                 <key>ProcessorType</key>
                 <integer>0</integer>
                 <key>ROM</key>
-                <data>5ESJ+jsP</data>
+                <data>fpsnsk/r</data>
                 <key>SpoofVendor</key>
                 <false/>
                 <key>SystemMemoryStatus</key>
@@ -953,9 +959,9 @@
                 <key>SystemProductName</key>
                 <string>iMac20,1</string>
                 <key>SystemSerialNumber</key>
-                <string>C02F2SYZPN5T</string>
+                <string>C02CK2ZZPN5T</string>
                 <key>SystemUUID</key>
-                <string>C67A1B96-2BBC-4DC4-879F-13D22630D514</string>
+                <string>4304596A-5523-431C-95E1-ACF283F812D9</string>
             </dict>
             <key>UpdateDataHub</key>
             <true/>
