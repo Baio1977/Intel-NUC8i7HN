@@ -308,35 +308,17 @@
                     <key>i2c-channel-number</key>
                     <integer>2</integer>
                 </dict>
-                <key>PciRoot(0x0)/Pci(0x1C,0x4)</key>
-                <dict>
-                    <key>reg-ltrovr</key>
-                    <data>AAQAAAAAAAA=</data>
-                </dict>
                 <key>PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)</key>
                 <dict>
                     <key>PCI-Thunderbolt</key>
                     <integer>1</integer>
-                </dict>
-                <key>PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)/Pci(0x0,0x0)</key>
-                <dict>
-                    <key>PCIHotplugCapable</key>
-                    <integer>0</integer>
-                </dict>
-                <key>PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)</key>
-                <dict>
-                    <key>power-save</key>
-                    <integer>1</integer>
+                    <key>built-in</key>
+                    <data>AA==</data>
                 </dict>
                 <key>PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)/Pci(0x1,0x0)</key>
                 <dict>
                     <key>AAPL,slot-name</key>
-                    <string>Slot- 1</string>
-                </dict>
-                <key>PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)/Pci(0x2,0x0)</key>
-                <dict>
-                    <key>PCIHotplugCapable</key>
-                    <integer>0</integer>
+                    <string>Slot-1</string>
                 </dict>
                 <key>PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)/Pci(0x2,0x0)/Pci(0x0,0x0)</key>
                 <dict>
@@ -348,7 +330,7 @@
                 <key>PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)/Pci(0x4,0x0)</key>
                 <dict>
                     <key>AAPL,slot-name</key>
-                    <string>Slot- 2</string>
+                    <string>Slot-2</string>
                 </dict>
                 <key>PciRoot(0x0)/Pci(0x1F,0x0)</key>
                 <dict>
@@ -491,7 +473,7 @@
                     <key>BundlePath</key>
                     <string>Polaris22Fixup.kext</string>
                     <key>Comment</key>
-                    <string>V1.4.1</string>
+                    <string>V1.4.0</string>
                     <key>Enabled</key>
                     <true/>
                     <key>ExecutablePath</key>
@@ -509,7 +491,7 @@
                     <key>BundlePath</key>
                     <string>AppleALC.kext</string>
                     <key>Comment</key>
-                    <string>V1.9.6</string>
+                    <string>V1.9.7</string>
                     <key>Enabled</key>
                     <true/>
                     <key>ExecutablePath</key>
@@ -527,7 +509,7 @@
                     <key>BundlePath</key>
                     <string>BlueToolFixup.kext</string>
                     <key>Comment</key>
-                    <string>V2.7.1</string>
+                    <string>V2.7.2</string>
                     <key>Enabled</key>
                     <true/>
                     <key>ExecutablePath</key>
