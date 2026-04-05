@@ -81,7 +81,7 @@ In Security menu, set the following settings:
 
 ## Debug Info 
 
-- 
+- [Guide](https://github.com/Baio1977/Intel-NUC8i7HN/blob/main/File%20Debug/TB3_Guide_TB3_NUC8i7HVK.md)
 
 ## Credits
 
