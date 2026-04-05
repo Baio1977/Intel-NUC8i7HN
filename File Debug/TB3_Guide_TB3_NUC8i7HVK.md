@@ -16,12 +16,15 @@ Document in a clear and reusable way the debugging path and the final solution a
 # Terminal Debugging Commands
 
 - Delete logs
+  
   sudo log erase --all
    
 - Dump boot (advanced)
+  
   log show --last boot --predicate 'process == "kernel" AND senderImagePath CONTAINS "AppleACPIPlatform"' --style compact | awk '/ACPI Debug/{getline; getline; print}' | tee ~/Desktop/acpi_debug.txt
   
 - Log hotplug live (advanced)
+  
   log stream --info --debug --predicate 'process == "kernel" AND senderImagePath CONTAINS "AppleACPIPlatform"' --style compact | awk '/ACPI Debug/{getline; getline; print; fflush()}' | tee ~/Desktop/acpi_hotplug_live.txt
 
 # 1. Native OEM baseline
