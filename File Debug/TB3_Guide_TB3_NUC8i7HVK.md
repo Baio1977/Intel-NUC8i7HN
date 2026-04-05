@@ -4,7 +4,7 @@
 
 Document in a clear and reusable way the debugging path and the final solution adopted for **Thunderbolt 3 on the Intel NUC8i7HVK**, with focus on:
 
-- stable `RP05` / `PXSX` population at boot
+- stable `RP05` population at boot
 - the difference between **OEM bring-up** and **PCIe downstream branch stabilization**
 - the real role of `TBON`
 - replacing the old `UPV0` check
@@ -180,7 +180,7 @@ Across multiple boots it was observed that:
 - the TB3 controller was already powered on and `OSUP` had completed
 - but `PXSX.VDID` became valid **only later**
 - so the problem was no longer the controller itself
-- the problem was the exact moment when `RP05 / PXSX` became truly readable
+- the problem was the exact moment when `RP05.PXSX` became truly readable
 
 ---
 
