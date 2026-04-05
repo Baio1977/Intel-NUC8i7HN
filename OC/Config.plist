@@ -63,7 +63,7 @@
                     <key>BaseSkip</key>
                     <integer>0</integer>
                     <key>Comment</key>
-                    <string>Rename \_GPE.TINI to TINO</string>
+                    <string>Rename \_GPE.TINI to TINO for Force power TB3</string>
                     <key>Count</key>
                     <integer>0</integer>
                     <key>Enabled</key>
@@ -123,7 +123,7 @@
                     <key>BaseSkip</key>
                     <integer>0</integer>
                     <key>Comment</key>
-                    <string>Rename \_SB.PCI0.RP05._INI to XINI for ICM disable</string>
+                    <string>Rename \_SB.PCI0.RP05._INI to XINI for check PXSX.VDID ON</string>
                     <key>Count</key>
                     <integer>0</integer>
                     <key>Enabled</key>
@@ -153,7 +153,7 @@
                     <key>BaseSkip</key>
                     <integer>0</integer>
                     <key>Comment</key>
-                    <string>Rename \_SB.PCI0.RP05.PXSX._RMV to XRMV</string>
+                    <string>Rename \_SB.PCI0.RP05.PXSX._RMV to XRMV for hoplug</string>
                     <key>Count</key>
                     <integer>0</integer>
                     <key>Enabled</key>
@@ -315,13 +315,50 @@
                     <key>built-in</key>
                     <data>AA==</data>
                 </dict>
+                <key>PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)/Pci(0x0,0x0)</key>
+                <dict>
+                    <key>PCIHotplugCapable</key>
+                    <integer>0</integer>
+                    <key>built-in</key>
+                    <data>AA==</data>
+                </dict>
+                <key>PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)</key>
+                <dict>
+                    <key>TBTDPLowToHigh</key>
+                    <data>AQAAAA==</data>
+                    <key>TBTFlags</key>
+                    <data>AwAAAA==</data>
+                    <key>ThunderboltConfig</key>
+                    <data>AAIcAAIABQMBAAQABQMCAAMABQMBAAAAAwMCAAEAAgA=</data>
+                    <key>ThunderboltDROM</key>
+                    <data>RFJPTSAgICD//////////5oAAAAAAACGgIcKl14BZACGgHMgASEIgYACgAAAAAiCkAGAAAAACIOABIABAAAIhJADgAEAAALFC4YgAQBkAAAAAAADh4AFiFAAAAWJUAAABYpQAAAFi1AAAAgBSW50ZWwADwJIYWRlcyBDYW55b24AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</data>
+                    <key>ThunderboltUUID</key>
+                    <data>AAADzHAAGGcj9Dg/wqQhAQ==</data>
+                    <key>built-in</key>
+                    <data>AA==</data>
+                    <key>linkDetails</key>
+                    <data>CAAAAAMAAAA=</data>
+                    <key>pathcr</key>
+                    <data>BAAAAAAAAAAAAAcAEAAQAAUAAAAAAAAAAAAHABAAEAABAAAACwAOAA4AAAAAAAAAAgAAAAAAAAAAAAQAAgABAAMAAAAAAAAAAAAHAAIAAQA=</data>
+                    <key>power-save</key>
+                    <integer>1</integer>
+                    <key>sscOffset</key>
+                    <data>AAc=</data>
+                </dict>
                 <key>PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)/Pci(0x1,0x0)</key>
                 <dict>
                     <key>AAPL,slot-name</key>
-                    <string>Slot-1</string>
+                    <string>PCI Slot 1</string>
+                </dict>
+                <key>PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)/Pci(0x2,0x0)</key>
+                <dict>
+                    <key>PCIHotplugCapable</key>
+                    <integer>0</integer>
                 </dict>
                 <key>PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)/Pci(0x2,0x0)/Pci(0x0,0x0)</key>
                 <dict>
+                    <key>AAPL,xhc-clock-id</key>
+                    <integer>1</integer>
                     <key>USBBusNumber</key>
                     <integer>0</integer>
                     <key>UsbCompanionControllerPresent</key>
@@ -330,7 +367,7 @@
                 <key>PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x0)/Pci(0x4,0x0)</key>
                 <dict>
                     <key>AAPL,slot-name</key>
-                    <string>Slot-2</string>
+                    <string>PCI Slot 1</string>
                 </dict>
                 <key>PciRoot(0x0)/Pci(0x1F,0x0)</key>
                 <dict>
@@ -967,7 +1004,7 @@
                     <key>bluetoothInternalControllerInfo</key>
                     <data>AAAAAAAAAAAAAAAAAAA=</data>
                     <key>boot-args</key>
-                    <string>-v keepsyms=1 debug=0x100 itlwm_cc=IT agdpmod=pikera</string>
+                    <string>-v keepsyms=1 debug=0x100 msgbuf=1048576 itlwm_cc=IT agdpmod=pikera</string>
                     <key>csr-active-config</key>
                     <data>AwgAAA==</data>
                     <key>prev-lang:kbd</key>
@@ -1010,13 +1047,13 @@
                 <key>AdviseFeatures</key>
                 <false/>
                 <key>MLB</key>
-                <string>C02242600CDPHC1JA</string>
+                <string>C02953104GUPHC1CB</string>
                 <key>MaxBIOSVersion</key>
                 <false/>
                 <key>ProcessorType</key>
                 <integer>0</integer>
                 <key>ROM</key>
-                <data>1Mv4Rce2</data>
+                <data>csPgx/Ww</data>
                 <key>SpoofVendor</key>
                 <false/>
                 <key>SystemMemoryStatus</key>
@@ -1024,9 +1061,9 @@
                 <key>SystemProductName</key>
                 <string>iMac20,1</string>
                 <key>SystemSerialNumber</key>
-                <string>C02JK0GTPN5T</string>
+                <string>C02C11ZBPN5T</string>
                 <key>SystemUUID</key>
-                <string>1369EE91-75DF-4268-AD83-99BDE2C00E83</string>
+                <string>3FBF6717-6AF0-4051-8ED4-934361811F7A</string>
             </dict>
             <key>UpdateDataHub</key>
             <true/>
