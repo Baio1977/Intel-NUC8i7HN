@@ -87,7 +87,7 @@ So:
 With a pure OEM / incomplete Hackintosh setup:
 
 - the Thunderbolt controller could power up
-- but `RP05` / `PXSX` were **not always populated correctly** in `IOService`
+- but `RP05` were **not always populated correctly** in `IOService`
 - the eGPU / downstream branch were not always visible consistently at boot
 
 ---
