@@ -11,7 +11,7 @@
 
 ## Tahoe ONLY:
 
-Use this script to restore audio functions https://github.com/Mirone/MyKextInstaller
+- Use this script to restore audio functions https://github.com/Mirone/MyKextInstaller
 
 ## Specification:
 
@@ -42,13 +42,13 @@ In Security menu, set the following settings:
     
 ## Working:
 
- - Audio (Fix ALL Sound - New Layout 22 for ALC700)
- - GPU acceleration
- - Intel Wireless / Bluetooth
- - Native CPU power management
- - SD card reader (Fix 3\12\2023 add CtlnaSDXC.kext + Spoof Device Properties)
- - HDMI video and sound 
- - Thunderbolt JHL6540 Alpine Ridge Work whit HotPlug 
+- Audio (Fix ALL Sound - New Layout 22 for ALC700)
+- GPU acceleration
+- Intel Wireless / Bluetooth
+- Native CPU power management
+- SD card reader (Fix 3\12\2023 add CtlnaSDXC.kext + Spoof Device Properties)
+- HDMI video and sound 
+- Thunderbolt JHL6540 Alpine Ridge Work whit HotPlug 
    
 ## Not Work:
  
@@ -65,6 +65,8 @@ In Security menu, set the following settings:
 
 ![Nuc](./Screenshot/4.png)
 ![Nuc](./Screenshot/5.png)
+![Nuc](./Screenshot/11.png)
+![Nuc](./Screenshot/12.png)
 
 ## Work EGPU
 - [Geekbench RX 6600 XT Tahoe](https://browser.geekbench.com/v6/compute/5545620)
@@ -77,6 +79,9 @@ In Security menu, set the following settings:
 
 ![Nuc](./Screenshot/6.png)
 
+## Debug Info 
+
+- 
 
 ## Credits
 
