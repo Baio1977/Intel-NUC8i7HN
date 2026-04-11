@@ -63,7 +63,7 @@
                     <key>BaseSkip</key>
                     <integer>0</integer>
                     <key>Comment</key>
-                    <string>Rename \_GPE.TINI to TINO for Force power TB3</string>
+                    <string>Rename \_GPE.TINI to TINO for Force power TB3 and check PXSX.VDID ON</string>
                     <key>Count</key>
                     <integer>0</integer>
                     <key>Enabled</key>
@@ -108,36 +108,6 @@
                     <data></data>
                     <key>Replace</key>
                     <data>UhQaWFNUQQ==</data>
-                    <key>ReplaceMask</key>
-                    <data></data>
-                    <key>Skip</key>
-                    <integer>0</integer>
-                    <key>TableLength</key>
-                    <integer>0</integer>
-                    <key>TableSignature</key>
-                    <data>RFNEVA==</data>
-                </dict>
-                <dict>
-                    <key>Base</key>
-                    <string></string>
-                    <key>BaseSkip</key>
-                    <integer>0</integer>
-                    <key>Comment</key>
-                    <string>Rename \_SB.PCI0.RP05._INI to XINI for check PXSX.VDID ON</string>
-                    <key>Count</key>
-                    <integer>0</integer>
-                    <key>Enabled</key>
-                    <true/>
-                    <key>Find</key>
-                    <data>UlAwNQhMVFJaAAhPQkZaAAhMTVNMAAhMTlNMABQqX0lOSQ==</data>
-                    <key>Limit</key>
-                    <integer>0</integer>
-                    <key>Mask</key>
-                    <data></data>
-                    <key>OemTableId</key>
-                    <data></data>
-                    <key>Replace</key>
-                    <data>UlAwNQhMVFJaAAhPQkZaAAhMTVNMAAhMTlNMABQqWElOSQ==</data>
                     <key>ReplaceMask</key>
                     <data></data>
                     <key>Skip</key>
@@ -1047,13 +1017,13 @@
                 <key>AdviseFeatures</key>
                 <false/>
                 <key>MLB</key>
-                <string>C02953104GUPHC1CB</string>
+                <string>C02008401GUPHC1UE</string>
                 <key>MaxBIOSVersion</key>
                 <false/>
                 <key>ProcessorType</key>
                 <integer>0</integer>
                 <key>ROM</key>
-                <data>csPgx/Ww</data>
+                <data>qDKX2kVX</data>
                 <key>SpoofVendor</key>
                 <false/>
                 <key>SystemMemoryStatus</key>
@@ -1061,9 +1031,9 @@
                 <key>SystemProductName</key>
                 <string>iMac20,1</string>
                 <key>SystemSerialNumber</key>
-                <string>C02C11ZBPN5T</string>
+                <string>C02C94ZAPN5T</string>
                 <key>SystemUUID</key>
-                <string>3FBF6717-6AF0-4051-8ED4-934361811F7A</string>
+                <string>2C9A259C-15F3-43E5-9B00-CC99B26D3B8C</string>
             </dict>
             <key>UpdateDataHub</key>
             <true/>
