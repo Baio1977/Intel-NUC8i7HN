@@ -278,7 +278,7 @@
 				<key>IOPropertyMatch</key>
 				<dict>
 					<key>pcidebug</key>
-					<string>165:0:0</string>
+					<string>118:0:0</string>
 				</dict>
 			</dict>
 			<key>IOProviderClass</key>
