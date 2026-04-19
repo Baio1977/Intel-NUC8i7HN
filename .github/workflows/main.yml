@@ -121,7 +121,7 @@ jobs:
           zip -r EFI.zip $EFI_DIR
 
       - name: Upload EFI artifact
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@v7.0.1
         with:
           name: NUC8i7HVK-EFI
           path: EFI.zip
